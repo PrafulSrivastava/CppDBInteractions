@@ -39,7 +39,27 @@ void Customer::BuildDB() {
 	else {
 
 	}
-	
+	SQLCHAR query_in_cust[1024] = "INSERT INTO customers VALUES (1, 'Denied', 'Denied@gmail.com', '1111'),(2, 'Christ', 'Christ@gmail.com', '2222'), (3, 	'Mikale', 	'Mikale@gmail.com', 	'3333')";
+	if (SQL_SUCCESS != SQLExecDirect(SQLStatementHandle, (SQLCHAR*)query_in_cust, SQL_NTS)) {
+		tool->showSQLError(SQL_HANDLE_STMT, SQLStatementHandle);
+	}
+	else {
+
+	}
+	SQLCHAR query_in_rooms[1024] = "INSERT INTO rooms VALUES (1,'luxury'), (2, 'luxury'), (3,'luxury'), (4,'economy'), (5,'economy'),(6,'economy'), (7,'executive'), (8,'executive'), (9,'executive')";
+	if (SQL_SUCCESS != SQLExecDirect(SQLStatementHandle, (SQLCHAR*)query_in_cust, SQL_NTS)) {
+		tool->showSQLError(SQL_HANDLE_STMT, SQLStatementHandle);
+	}
+	else {
+
+	}
+	SQLCHAR query_in_slots[1024] = "INSERT INTO slots VALUES (1, 1, 12, 3, 2019, 15, 3, 2019), (2, 1, 17, 3, 2019, 19, 3, 2019),(3, 1, 21, 3, 2019, 26, 3, 2019)";
+	if (SQL_SUCCESS != SQLExecDirect(SQLStatementHandle, (SQLCHAR*)query_in_cust, SQL_NTS)) {
+		tool->showSQLError(SQL_HANDLE_STMT, SQLStatementHandle);
+	}
+	else {
+
+	}
 }
 
 void strToSQLChar(string query, SQLCHAR* SQLQuery) {
